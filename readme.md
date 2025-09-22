@@ -1,7 +1,5 @@
 [![Lightning Flow Scanner Banner](https://raw.githubusercontent.com/Lightning-Flow-Scanner/lightning-flow-scanner-core/master/media/bannerslim.png)](https://github.com/Lightning-Flow-Scanner)
 
-_An Extensible Rule Engine capable of conducting static analysis on the metadata associated with Salesforce Lightning Flows, Process Builders, and Workflows. Used by the Lightning Flow Scanner [Salesforce CLI Plugin](https://www.npmjs.com/package/lightning-flow-scanner) and [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ForceConfigControl.lightningflowscanner&ssr=false#review-details)._
-
 - [Default Rules](#default-rules)
 - [Core Functions](#core-functions)
 - [Configurations](#configurations)
