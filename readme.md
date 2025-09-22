@@ -11,8 +11,6 @@ _An Extensible Rule Engine capable of conducting static analysis on the metadata
 
 ---
 
-## [🚨 Deprecation Notice — August, 2025](https://github.com/Lightning-Flow-Scanner)
-
 ## Default Rules
 
 📌 **Tip:** To link directly to a specific rule, use the full GitHub anchor link format:
@@ -154,7 +152,7 @@ Using the rules section of your configurations, you can specify the list of rule
 }
 ```
 
-### \*\Exception Configuration
+### Exception Configuration
 
 Specifying exceptions allows you to exclude specific scenarios from rule enforcement. Exceptions can be specified at the flow, rule, or result level to provide fine-grained control. Below is a breakdown of the available attributes of exception configuration:
 
