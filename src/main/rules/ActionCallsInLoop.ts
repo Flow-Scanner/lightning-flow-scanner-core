@@ -1,29 +1,12 @@
-import { FlowType, IRuleDefinition } from "../internals/internals";
-import { LoopRuleCommon } from "../models/LoopRuleCommon";
-
-export class ActionCallsInLoop extends LoopRuleCommon implements IRuleDefinition {
-  constructor() {
-    super(
-      {
-        autoFixable: false,
-        description:
-          "To prevent exceeding Apex governor limits, it is advisable to consolidate and bulkify your apex calls, utilize a single action call containing a collection variable at the end of the loop.",
-        docRefs: [
-          {
-            label: "Invocable Method Considerations",
-            path: "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_InvocableMethod.htm",
-          },
-        ],
-        isConfigurable: false,
-        label: "**Beta** Action Calls In Loop",
-        name: "ActionCallsInLoop",
-        supportedTypes: FlowType.backEndTypes,
-      },
-      { severity: "warning" }
-    );
-  }
-
-  protected getStatementTypes(): string[] {
-    return ["actionCalls", "apexPluginCalls"];
-  }
-}
+/**
+ * ⚠️ WARNING!
+ * 
+ * This is a version of Flow Scanner that contains known vulnerabilities.
+ * 
+ * Please use a version >= 5.1.0 immidiately.
+ * Failure to upgrade may expose your project to security risks.
+ * 
+ * Follow  👉 https://github.com/Flow-Scanner/
+ * Details 👉 https://github.com/orgs/Flow-Scanner/discussions/263
+ * 
+ */
