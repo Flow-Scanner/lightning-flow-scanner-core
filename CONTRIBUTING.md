@@ -1,8 +1,8 @@
 ## Contributing Guidelines
 
-### Our Journey: Shaping Flow Quality Since 2021
+### Our Journey: Shaping Flow Analysis Since 2021
 
-Since 2021, the _Lightning Flow Scanner_ has been empowering Salesforce Flow excellence across six open-source, free platforms—from CLI tools to native Salesforce apps. Our passionate community drives the standard for high-quality Flows, ensuring reliability and efficiency. Your support can amplify our impact. Here’s how you can contribute:
+Since 2021, the _Lightning Flow Scanner_ has grown from its roots in CLI and VS Code tools to empower Salesforce Developers across six free and open-source platforms—from CLI tools to native Salesforce apps—delivering a unified experience for robust static analysis of Flows. Our passionate community has shared their expertise to ensure reliability and efficiency in Flow optimization. Your support can amplify our impact. Here’s how you can contribute:
 
 - ⭐ Starring the project to show your support
 - 📢 Sharing our work with your network
@@ -15,8 +15,8 @@ We handle those through [GitHub Issues](https://github.com/features/issues). Bef
 
 ###### Core Engine - For issues or requests related to the core functionality of the scanner, use the following links to submit your request:
 
+- [Bug Report](https://github.com/Flow-Scanner/lightning-flow-scanner-core/issues/new?template=bug_report.md): Report a bug or issue
 - [Rule Request](https://github.com/Flow-Scanner/lightning-flow-scanner-core/issues/new?template=rule-request.md): Submit a request for a new rule.
-- [Bug Report](https://github.com/Flow-Scanner/lightning-flow-scanner-core/issues/new?template=bug_report.md): Report a bug or issue.
 - [Features/Other](https://github.com/Flow-Scanner/lightning-flow-scanner-core/issues/new): Suggest a new feature.
 
 ###### Platforms - For issues or requests related to specific platforms, use the appropriate link below:
@@ -27,4 +27,4 @@ We handle those through [GitHub Issues](https://github.com/features/issues). Bef
 - [Salesforce App](https://github.com/Flow-Scanner/lightning-flow-scanner-app/issues/new)
 - [VS Code/Code Builder](https://github.com/Flow-Scanner/lightning-flow-scanner-vsx/issues/new)
 
-##### Thank you for your consideration!
+###### Thank you for helping us improve the scanner!
