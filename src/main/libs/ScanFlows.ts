@@ -11,14 +11,15 @@ import { ParsedFlow } from "../models/ParsedFlow";
 import { GetRuleDefinitions } from "./GetRuleDefinitions";
 import { scan2 } from "./Scan";
 
-const { IS_NEW_SCAN_ENABLED: isNewScanEnabled } = process.env;
+const { IS_NEW_SCAN_ENABLED: isNewScanEnabled, OVERRIDE_CONFIG: overrideConfig } = process.env;
 
 export function scan(parsedFlows: ParsedFlow[], ruleOptions?: IRulesConfig): ScanResult[] {
-  if (isNewScanEnabled === "true") {
+ 
+  // TD see jest.env-setup.ts for testing scan2
+  if (isNewScanEnabled === "true" && overrideConfig !== null && overrideConfig !== undefined) {
     return scan2(parsedFlows, ruleOptions);
   }
 
-  // TD Will be removed once scan2 is fully enabled
   const flows: Flow[] = [];
   for (const flow of parsedFlows) {
     if (!flow.errorMessage && flow.flow) {
