@@ -3,7 +3,7 @@
     "module": "ES6",
     "target": "es6",
     "moduleResolution": "node",
-    "outDir": "types",
+    "outDir": "out",
     "lib": ["es2020.string", "es6"],
     "experimentalDecorators": true,
     "sourceMap": false,
@@ -16,8 +16,7 @@
   "exclude": [
     "node_modules",
     "node_modules/**",
-    "out/**",
-    "files/example-flows/**",
+    "assets/example-flows/**",
     "tests/**/*.test.ts",
     "jest.config.ts",
     "vite.config.ts",

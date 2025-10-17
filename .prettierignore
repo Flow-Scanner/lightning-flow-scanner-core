@@ -1,4 +1,4 @@
-files/example-flows/**
+assets/example-flows/**
 out/**
 tests/**/*.test.ts
 jest.config.ts
