@@ -216,7 +216,7 @@ _Attempts to apply automatic fixes where available._
    To test changes to the core module in the VS Code extension or SF CLI plugin locally, run:
 
    ```bash
-   npm link
+   npm run link
    ```
 
    b) Go to the dependent project (VSX or SF CLI) and use:
