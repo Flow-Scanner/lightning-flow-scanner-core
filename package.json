@@ -18,7 +18,7 @@
   },
   "scripts": {
     "clean": "rm -rf out types",
-    "build:js": "swc src --out-dir out/main --copy-files --strip-leading-paths --config-file .swcrc",
+    "build:js": "swc src --out-dir out --copy-files --strip-leading-paths --config-file .swcrc",
     "build:types": "tsc -p tsconfig.types.json --declaration --emitDeclarationOnly --outDir out",
     "copy:index": "cp out/main/index.js out/index.js || true",
     "copy:media": "mkdir -p out/assets/media && cp -r assets/media/* out/assets/media/ || true",
