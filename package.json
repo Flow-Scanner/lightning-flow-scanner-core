@@ -1,5 +1,6 @@
 {
   "name": "lightning-flow-scanner-core",
+  "description": "A purpose-built engine to assess and enhance Salesforce Flow automations for best practices, security, governor limits, and performance issues.",
   "version": "5.9.4",
   "main": "index.js",
   "types": "index.d.ts",
@@ -12,7 +13,6 @@
     "README.md",
     "CONTRIBUTING.md"
   ],
-  "type": "commonjs",
   "engines": {
     "node": "^18 || ^20 || ^22 || ^23"
   },
@@ -26,20 +26,19 @@
     "copy:root-files:dist": "cp LICENSE.md dist/ || true",
     "____main____": "__DEVELOPER COMMANDS__",
     "build": "npm run clean && npm run build:js && npm run build:types && npm run copy:index && npm run copy:media && npm run copy:root-files:out",
-    "vite:dist": "npm run build:js && vite build && npm run copy:root-files:dist",
     "test": "jest",
-    "test:vite": "vitest",
     "lint": "eslint src tests",
     "swc:build:link": "npm run build && npm link ./out",
     "____pack____": "PACKAGING COMMANDS__",
     "swc:sim:pack": "npm run build",
+    "vite:dist": "npm run build:js && vite build && npm run copy:root-files:dist",
+    "test:vite": "vitest",
     "prepare": "husky",
     "precommit": "lint-staged",
     "prepush": "npm run build && npm test",
     "stryker": "npm i -g @stryker-mutator/core @stryker-mutator/jest-runner && stryker run"
   },
   "license": "MIT",
-  "description": "A purpose-built engine to assess and enhance Salesforce Flow automations.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Flow-Scanner/lightning-flow-scanner-core.git"
@@ -85,14 +84,14 @@
     "salesforce",
     "flow",
     "linter",
-    "static-analysis",
-    "static-code-analysis",
-    "flow-scanner",
-    "flow-analysis",
+    "salesforce-flow",
     "flow-linter",
-    "metadata-scanner",
+    "flow-scanner",
+    "static-analysis",
+    "code-quality",
     "security-scanner",
-    "best-practices",
-    "salesforce-flow"
+    "flow-builder",
+    "salesforce-devops",
+    "best-practices"
   ]
 }
