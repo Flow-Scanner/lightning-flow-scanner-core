@@ -24,3 +24,5 @@ reports
 coverage
 .nyc_output
 .github/.secrets
+
+lc
