@@ -8,7 +8,7 @@
     "skipLibCheck": true,
     "declarationMap": true,
     "baseUrl": ".",
-    "paths": {} // Clear any aliases that might nest
+    "paths": {}
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "out"]

@@ -21,7 +21,6 @@
       "decoratorMetadata": false
     },
     "keepClassNames": true
-    // Removed baseUrl to prevent path duplication
   },
   "minify": false  // Disable for now; re-enable post-debug if needed for smaller JS
 }

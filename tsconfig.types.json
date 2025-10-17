@@ -8,7 +8,7 @@
     "experimentalDecorators": true,
     "sourceMap": false,
     "rootDir": "src",
-    "strict": false /* enable all strict type-checking options */,
+    "strict": false,
     "baseUrl": ".",
     "declaration": true,
     "esModuleInterop": true
@@ -17,6 +17,7 @@
     "node_modules",
     "node_modules/**",
     "out/**",
+    "files/example-flows/**",
     "tests/**/*.test.ts",
     "jest.config.ts",
     "vite.config.ts",
