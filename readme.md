@@ -6,7 +6,7 @@
 
 ## ⚠️ Security Warning
 
-This version of Flow Scanner contains known vulnerabilities. Refer to the [security release notes](https://github.com/Flow-Scanner/lightning-flow-scanner-core/releases/tag/v5.1.0) for details on the removal of unsafe custom rule loading to prevent malicious code execution. Users are strongly encouraged to upgrade to the latest version.
+This version of Flow Scanner was deprecated and is no longer supported. Refer to the [security release notes](https://github.com/Flow-Scanner/lightning-flow-scanner-core/releases/tag/v5.1.0) for details on the unpublication. Users are strongly encouraged to upgrade to the new versions.
 
 ## Stay Updated
 
