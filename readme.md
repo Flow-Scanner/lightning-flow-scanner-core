@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/Flow-Scanner">
-    <img src="https://raw.githubusercontent.com/Flow-Scanner/lightning-flow-scanner-core/main/media/bannerslim.png" style="width: 55%;" />
+    <img src="https://raw.githubusercontent.com/Flow-Scanner/lightning-flow-scanner-core/main/assets/media/bannerslim.png" style="width: 55%;" />
   </a>
 </p>
 
