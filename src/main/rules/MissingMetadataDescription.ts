@@ -19,13 +19,17 @@ export class MissingMetadataDescription extends RuleCommon implements IRuleDefin
     return this.executeWithSuppression(flow, options, suppressions, (suppSet) => {
       const results: core.ResultDetails[] = flow.elements
         .filter((elem) => {
-          console.log("elem: ", elem);
-          if (elem.metaType !== "metadata" && !elem.element["description"]) {
+          if (
+            elem.metaType !== "metadata" &&
+            !elem.element["description"] &&
+            elem.subtype !== "start" &&
+            !suppSet.has(elem.name)
+          ) {
+            console.log("elem: ", elem);
             return elem;
           }
         })
         .map((elem) => {
-          console.log("elem.map: ", elem);
           return new core.ResultDetails(elem);
         });
 
