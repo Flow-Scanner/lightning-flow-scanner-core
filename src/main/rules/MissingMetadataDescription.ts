@@ -29,7 +29,6 @@ export class MissingMetadataDescription extends RuleCommon implements IRuleDefin
           !elem.element["description"] &&
           elem.subtype !== "start"
         ) {
-          console.log("elem: ", elem);
           return elem;
         }
       })
