@@ -44,5 +44,4 @@
         </connector>
     </start>
     <status>Active</status>
-    <triggerOrder>10</triggerOrder>
 </Flow>

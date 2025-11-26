@@ -24,6 +24,7 @@ import { UnusedVariable } from "../rules/UnusedVariable";
 import { MissingMetadataDescription } from "../rules/MissingMetadataDescription";
 
 export const DefaultRuleStore: object = {
+  ActionCallsInLoop,
   APIVersion,
   AutoLayout,
   CopyAPIName,
@@ -50,5 +51,4 @@ export const DefaultRuleStore: object = {
 };
 
 export const BetaRuleStore: object = {
-  ActionCallsInLoop,
 };

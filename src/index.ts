@@ -1,5 +1,6 @@
 import type { IRuleDefinition } from "./main/interfaces/IRuleDefinition";
 import type { IRulesConfig } from "./main/interfaces/IRulesConfig";
+import type { FlatViolation } from "./main/models/FlatViolation";
 
 import { Compiler } from "./main/libs/Compiler";
 import { exportDetails } from "./main/libs/exportAsDetails";
@@ -16,9 +17,9 @@ import { FlowResource } from "./main/models/FlowResource";
 import { FlowType } from "./main/models/FlowType";
 import { FlowVariable } from "./main/models/FlowVariable";
 import { ParsedFlow } from "./main/models/ParsedFlow";
-import { ResultDetails } from "./main/models/ResultDetails";
 import { RuleResult } from "./main/models/RuleResult";
 import { ScanResult } from "./main/models/ScanResult";
+import { Violation } from "./main/models/Violation";
 
 export {
   Compiler,
@@ -36,9 +37,9 @@ export {
   getRules,
   parse,
   ParsedFlow,
-  ResultDetails,
+  Violation,
   RuleResult,
   scan,
   ScanResult,
 };
-export type { IRuleDefinition, IRulesConfig };
+export type { FlatViolation, IRuleDefinition, IRulesConfig };

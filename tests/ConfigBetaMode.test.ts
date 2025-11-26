@@ -4,7 +4,7 @@ import * as path from "path";
 import * as core from "../src";
 
 describe("Rule Configurations ", () => {
-  const example_uri1 = path.join(__dirname, "../assets/example-flows/force-app/main/default/flows/Unconnected_Element.flow-meta.xml");
+  const example_uri1 = path.join(__dirname, "../assets/example-flows/force-app/main/default/flows/demo/Unconnected_Element.flow-meta.xml");
 
   // eslint-disable-next-line jest/no-disabled-tests
   it.skip("should use default when no configuration is provided", async () => {
@@ -21,7 +21,7 @@ describe("Rule Configurations ", () => {
   it.skip("should use default and include beta", async () => {
     const flows = await core.parse([example_uri1]);
     const ruleConfig = {
-      betamode: true,
+      betaMode: true,
       exceptions: {
         CreateANewAccountWithChild: { DuplicateDMLOperation: ["ViewAccountId"] },
       },

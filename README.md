@@ -15,6 +15,7 @@
   - [Defining Severity Levels](#defining-severity-levels)
   - [Configuring Expressions](#configuring-expressions)
   - [Specifying Exceptions](#specifying-exceptions)
+  - [Report Detail Level](#report-detail-level)
   - [Include Beta Rules](#include-beta-rules)
 - **[Usage](#Usage)**
   - [Examples](#examples)
@@ -26,8 +27,10 @@
 
 ## Default Rules
 
-<p>📌 <strong>Tip:</strong> To link directly to a specific rule, use the full GitHub anchor link format. Example:</p>
-<p><em><a href="https://github.com/Flow-Scanner/lightning-flow-scanner-core#unsafe-running-context">https://github.com/Flow-Scanner/lightning-flow-scanner-core#unsafe-running-context</a></em></i></p>
+<p>📌<strong>Tip:</strong> To link directly to a specific rule, use the full GitHub anchor link format. Example:</p>
+<p><em><a href="https://github.com/Flow-Scanner/lightning-flow-scanner-core#unsafe-running-context">https://github.com/Flow-Scanner/lightning-flow-scanner-core#unsafe-running-context</a></em></p>
+
+> Want to code a new rule? → See [How to Write a Rule](docs/write-a-rule.md)
 
 ### Action Calls In Loop(Beta)
 
@@ -125,7 +128,7 @@ _[UnusedVariable](https://github.com/Flow-Scanner/lightning-flow-scanner-core/tr
 
 ## Configuration
 
-It is recommended to set up configuration and define:
+Lightning Flow Scanner is plug-and-play by default, but we recommend configuring and defining:
 
 - The rules to be executed.
 - The severity of violating any specific rule.
@@ -201,8 +204,10 @@ Specifying exceptions allows you to exclude specific scenarios from rule enforce
   "exceptions": {
     "<FlowName>": {
       "<RuleName>": [
-        "<ResultName>",   // Suppress specific result
-        "*",              // Suppress ALL results of this rule
+        // Suppress a specific result:
+        "<ResultName>",
+        // Suppress ALL results of rule:
+        "*",
         ...
       ]
     },
@@ -224,6 +229,22 @@ _Example_
 }
 ```
 
+### Report Detail Level
+
+Control the verbosity of violation reports via detailLevel. By default (`enriched`), outputs include element or flow-level details like variable data types, node connectors/locations, or attribute expressions for comprehensive reports. Set to `simple` for lighter output with only line and column numbers.
+
+```json
+{
+  "rules": {
+    ...
+  },
+  "exceptions": {
+    ...
+  },
+  "detailLevel": "simple"
+}
+```
+
 ### Include Beta Rules
 
 New rules are introduced in Beta mode before being added to the default ruleset. To include current Beta rules, enable the optional betamode parameter in your configuration:
@@ -236,15 +257,16 @@ New rules are introduced in Beta mode before being added to the default ruleset.
   "exceptions": {
     ...
   },
-  "betamode": true
+  "betaMode": true
 }
+
 ```
 
 ---
 
 ## Usage
 
-`lightning-flow-scanner-core` can be used as a dependency in Node.js and browser environments, or as a standalone UMD module.
+Use `lightning-flow-scanner-core` as a Node.js/browser dependency or standalone UMD module.
 
 ### Examples
 
@@ -282,7 +304,7 @@ _Retrieves rule definitions used in the scanner._
 
 #### [`parse(selectedUris: any): Promise<ParsedFlow[]>`](https://github.com/Flow-Scanner/lightning-flow-scanner-core/tree/main/src/main/libs/ParseFlows.ts)
 
-_Loads Flow XML files into in-memory models._
+_Loads Flow XML files into in-memory models.(Node.js only)_
 
 #### [`scan(parsedFlows: ParsedFlow[], ruleOptions?: IRulesConfig): ScanResult[]`](https://github.com/Flow-Scanner/lightning-flow-scanner-core/tree/main/src/main/libs/ScanFlows.ts)
 
@@ -291,10 +313,6 @@ _Runs all enabled rules and returns detailed violations._
 #### [`fix(results: ScanResult[]): ScanResult[]`](https://github.com/Flow-Scanner/lightning-flow-scanner-core/tree/main/src/main/libs/FixFlows.ts)
 
 _Automatically applies available fixes(removing variables and unconnected elements)._
-
-#### [`exportDetails(results: ScanResult[]): FlatViolation[]`](https://github.com/Flow-Scanner/lightning-flow-scanner-core/tree/main/src/main/libs/exportAsDetails.ts)
-
-_Get output of violations only(Reserved for future use)._
 
 #### [`exportSarif(results: ScanResult[]): string`](https://github.com/Flow-Scanner/lightning-flow-scanner-core/tree/main/src/main/libs/exportAsSarif.ts)
 
@@ -307,7 +325,7 @@ _Get SARIF output including exact line numbers of violations._
 [![GitHub stars](https://img.shields.io/github/stars/Flow-Scanner/lightning-flow-scanner-core)](https://img.shields.io/github/stars/Flow-Scanner/lightning-flow-scanner-core)
 [![GitHub contributors](https://img.shields.io/github/contributors/Flow-Scanner/lightning-flow-scanner-core.svg)](https://gitHub.com/Flow-Scanner/lightning-flow-scanner-core/graphs/contributors/)
 [![License](https://img.shields.io/npm/l/lightning-flow-scanner-core.svg)](https://github.com/Flow-Scanner/lightning-flow-scanner-core/raw/main/LICENSE.md)
-[![npm version](https://img.shields.io/npm/v/Flow-Scanner/lightning-flow-scanner-core?label=npm)](https://www.npmjs.com/package/@flow-scanner/lightning-flow-scanner-core)
+[![npm version](https://img.shields.io/npm/v/@flow-scanner/lightning-flow-scanner-core)](https://www.npmjs.com/package/@flow-scanner/lightning-flow-scanner-core)
 [![Known Vulnerabilities](https://snyk.io/test/github/Flow-Scanner/lightning-flow-scanner-core/badge.svg)](https://snyk.io/test/github/Flow-Scanner/lightning-flow-scanner-core)
 
 **To install with npm:**
@@ -352,14 +370,21 @@ npm install @flow-scanner/lightning-flow-scanner-core
    npm run test
    ```
 
-5. Test as local dependency(Optional):
-   a. run:
+5. Testing the module locally(Optional):
+
+   To link the module, run:
 
    ```bash
    npm run link
    ```
 
-   b. Go to the dependent project (e.g. VSX or CLI) and use:
+   a. Ad-Hoc Testing with node:
+
+   ```bash
+   npm run link
+   ```
+
+   b. Test in a dependent project (e.g. VSX or CLI):
 
    ```bash
    npm link @flow-scanner/lightning-flow-scanner-core
@@ -367,10 +392,18 @@ npm install @flow-scanner/lightning-flow-scanner-core
 
    Your local module will now replace any installed version and update on rebuild.
 
-6. Create a standalone UMD Module(Optional):
+6. Deploy Demo Flows (Optional):
 
-```bash
-  npm run vite:dist // creates UMD at`dist/lightning-flow-scanner-core.umd.js`.
-```
+   ```bash
+   cd assets/example-flows && sf project deploy start &&
+   ```
+
+   Navigate to the [Demo Readme](assets\example-flows\README.md) for full details
+
+7. Create a standalone UMD Module(Optional):
+
+   ```bash
+     npm run vite:dist // creates UMD at`dist/lightning-flow-scanner-core.umd.js`.
+   ```
 
 <p><strong>Want to help improve Lightning Flow Scanner? See our <a href="https://github.com/Flow-Scanner/lightning-flow-scanner-core?tab=contributing-ov-file">Contributing Guidelines</a></strong></p>

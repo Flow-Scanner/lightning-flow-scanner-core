@@ -1,6 +1,5 @@
 import { FlowType, IRuleDefinition } from "../internals/internals";
 import { LoopRuleCommon } from "../models/LoopRuleCommon";
-
 export class ActionCallsInLoop extends LoopRuleCommon implements IRuleDefinition {
   constructor() {
     super(
@@ -15,13 +14,12 @@ export class ActionCallsInLoop extends LoopRuleCommon implements IRuleDefinition
           },
         ],
         isConfigurable: false,
-        label: "**Beta** Action Calls In Loop",
+        label: "Action Call In Loop",
         name: "ActionCallsInLoop",
         supportedTypes: FlowType.backEndTypes,
       }
     );
   }
-
   protected getStatementTypes(): string[] {
     return ["actionCalls", "apexPluginCalls"];
   }
