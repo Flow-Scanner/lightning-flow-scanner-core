@@ -39,7 +39,7 @@
   "devDependencies": {
     "@jest/types": "30.0.1",
     "@swc-node/jest": "1.9.1",
-    "@swc/cli": "0.7.7",
+    "@swc/cli": "0.7.9",
     "@swc/core": "1.13.5",
     "@swc/helpers": "0.5.17",
     "@types/jest": "29.5.14",
