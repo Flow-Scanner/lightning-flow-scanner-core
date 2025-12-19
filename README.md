@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<p align="center"><i>Archived: Now included as a package in the monorepo <a href="https://github.com/Flow-Scanner/lightning-flow-scanner">https://github.com/Flow-Scanner/lightning-flow-scanner</a> repository.</i></p>
+<p align="center"><i>Archived: Now included as a package in the monorepo <a href="https://github.com/Flow-Scanner/lightning-flow-scanner">Flow-Scanner/lightning-flow-scanner</a> repository.</i></p>
 
 ---
 
