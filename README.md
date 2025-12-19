@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<p align="center"><i>Now included as package in the [Flow-Scanner/lightning-flow-scanner](https://github.com/Flow-Scanner/lightning-flow-scanner) repository.</i></p>
+<p align="center"><i>Now included as package in the <a href="https://github.com/Flow-Scanner/lightning-flow-scanner">https://github.com/Flow-Scanner</a> repository.</i></p>
 
 ---
 
